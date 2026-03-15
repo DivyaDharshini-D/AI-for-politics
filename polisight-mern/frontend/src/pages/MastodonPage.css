@@ -1,0 +1,77 @@
+.mastodon-page { display: flex; flex-direction: column; gap: 18px; }
+
+.mast-header { padding: 16px 20px; }
+.mast-header-inner { display: flex; align-items: center; gap: 14px; }
+.mast-header-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  background: var(--purple-dim); color: var(--purple);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mast-header-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.mast-header-sub { font-size: 12px; color: var(--text-muted); }
+.mast-live-badge {
+  margin-left: auto; display: flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; color: var(--green);
+  font-family: var(--font-display); text-transform: uppercase;
+}
+
+/* Layout */
+.mastodon-layout { display: grid; grid-template-columns: 1fr 260px; gap: 14px; align-items: start; }
+@media(max-width:900px){ .mastodon-layout { grid-template-columns: 1fr; } }
+@media(max-width:900px){ .mast-sidebar { display: none; } }
+
+.mast-feed { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.mast-tag-filter { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.mast-posts { display: flex; flex-direction: column; gap: 10px; }
+
+/* Post card */
+.mast-post { padding: 16px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+
+.mast-post-header { display: flex; align-items: center; gap: 10px; }
+.mast-avatar {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden;
+  background: var(--purple-dim); display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--purple);
+  flex-shrink: 0;
+}
+.mast-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.mast-user-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.mast-display-name { font-size: 13px; font-weight: 600; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mast-username { font-size: 11px; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mast-time { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+
+.mast-content {
+  font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;
+  word-break: break-word; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;
+}
+
+.mast-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+
+.mast-stats { display: flex; align-items: center; gap: 14px; margin-top: 2px; }
+.mast-stat {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-muted);
+}
+.mast-stat svg { color: var(--text-muted); }
+.mast-link { margin-left: auto; font-size: 12px; color: var(--accent); font-weight: 600; text-decoration: none; }
+.mast-link:hover { opacity: .8; }
+
+/* Sidebar */
+.mast-sidebar { position: sticky; top: 80px; }
+.mast-trending-card { padding: 16px; }
+.mast-trending-list { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+
+.trend-tag-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all .15s; width: 100%;
+  font-family: var(--font-display);
+}
+.trend-tag-btn:hover { background: var(--bg-hover); color: var(--purple); border-color: var(--purple); }
+.trend-tag-btn.active { background: var(--purple-dim); color: var(--purple); border-color: var(--purple); }
+.trend-tag-uses { font-size: 10px; color: var(--text-muted); }

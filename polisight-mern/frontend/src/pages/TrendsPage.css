@@ -1,0 +1,110 @@
+.trends-page { display:flex; flex-direction:column; gap:16px; }
+
+.trends-search-row { display:flex; flex-direction:column; gap:10px; }
+.trends-search-wrap { display:flex; gap:8px; }
+.trends-search-wrap .input { flex:1; }
+.trends-quick-tags { display:flex; gap:6px; flex-wrap:wrap; }
+
+.trends-stats-bar { display:flex; align-items:center; background:var(--bg-surface); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; flex-wrap:wrap; }
+.trends-stat-item { display:flex; flex-direction:column; align-items:center; padding:14px 24px; gap:2px; }
+.trends-stat-n { font-family:var(--font-display); font-size:1.5rem; font-weight:800; color:var(--accent); }
+.trends-stat-item > span:last-child { font-size:11px; color:var(--text-muted); white-space:nowrap; }
+.trends-divider { width:1px; height:40px; background:var(--border); align-self:center; }
+
+.trends-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-areas:
+    "keywords sentiment"
+    "keywords radar"
+    "parties  sources";
+  gap:12px;
+}
+@media(max-width:800px){
+  .trends-grid {
+    grid-template-columns:1fr;
+    grid-template-areas:"keywords""sentiment""radar""parties""sources";
+  }
+}
+.trends-section { padding:20px; overflow:hidden; }
+
+/* HBars */
+.hbar-list { display:flex; flex-direction:column; gap:9px; }
+.hbar-row  { display:flex; align-items:center; gap:10px; }
+.hbar-label { width:90px; flex-shrink:0; font-size:12px; color:var(--text-secondary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.hbar-track { flex:1; height:26px; background:var(--bg-elevated); border-radius:var(--radius-sm); overflow:hidden; }
+.hbar-fill  { height:100%; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:flex-end; padding-right:7px; animation:growWidth .7s var(--ease-spring) both; min-width:4px; transition:width .3s; }
+.hbar-val-inside { font-size:11px; font-weight:700; color:rgba(255,255,255,.9); font-family:var(--font-display); }
+.hbar-pct  { width:34px; text-align:right; font-size:11px; color:var(--text-muted); font-family:var(--font-display); font-weight:600; }
+
+/* Gauge */
+.gauge-wrap { display:flex; flex-direction:column; align-items:center; gap:10px; padding:8px 0; }
+.gauge-svg  { width:180px; height:100px; }
+.gauge-legend { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+.gauge-legend span { font-size:12px; font-weight:600; font-family:var(--font-display); }
+
+/* Radar */
+.radar-container { display:flex; align-items:center; justify-content:center; padding:4px; }
+.radar-svg { width:220px; height:220px; max-width:100%; }
+
+/* Party trend */
+.party-trend-chart { display:flex; flex-direction:column; gap:9px; }
+.ptc-row   { display:flex; align-items:center; gap:10px; }
+.ptc-meta  { display:flex; align-items:center; gap:6px; min-width:0; width:130px; flex-shrink:0; overflow:hidden; }
+.ptc-dot   { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.ptc-name  { font-size:11px; color:var(--text-secondary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
+.ptc-short { font-size:10px; font-weight:700; color:var(--text-muted); font-family:var(--font-display); background:var(--bg-hover); padding:1px 5px; border-radius:3px; flex-shrink:0; }
+.ptc-track { flex:1; height:20px; background:var(--bg-elevated); border-radius:var(--radius-sm); overflow:hidden; }
+.ptc-fill  { height:100%; border-radius:var(--radius-sm); animation:growWidth .7s var(--ease-spring) both; opacity:.85; }
+.ptc-count { width:24px; text-align:right; font-size:11px; font-weight:700; color:var(--text-muted); font-family:var(--font-display); }
+
+/* Sources */
+.sources-list { display:flex; flex-direction:column; gap:7px; }
+.source-item  { display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:var(--radius-sm); background:var(--bg-elevated); border:1px solid var(--border); }
+.source-item-dot  { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.source-item-name { flex:1; font-size:13px; color:var(--text-secondary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+.chart-empty { padding:24px 16px; text-align:center; color:var(--text-muted); font-size:13px; }
+
+.auth-spinner { width:14px; height:14px; border:2px solid rgba(255,255,255,.35); border-top-color:#fff; border-radius:50%; animation:spin .7s linear infinite; display:inline-block; }
+
+/* ── Mastodon tag chart ──────────────────────────────────────────────────── */
+.masto-tag-chart { display:flex; flex-direction:column; gap:8px; }
+.mtc-row { display:flex; align-items:center; gap:10px; }
+.mtc-tag { width:100px; flex-shrink:0; font-size:12px; font-weight:700; color:var(--purple); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:var(--font-display); }
+.mtc-track { flex:1; height:8px; background:var(--bg-hover); border-radius:99px; overflow:hidden; }
+.mtc-fill { height:100%; background:var(--purple); border-radius:99px; animation:growWidth 0.7s var(--ease-spring) both; opacity:.85; }
+.mtc-nums { display:flex; flex-direction:column; align-items:flex-end; min-width:50px; }
+.mtc-nums span:first-child { font-size:11px; font-weight:700; color:var(--text-muted); font-family:var(--font-display); }
+.mtc-accts { font-size:9px; color:var(--text-muted); }
+
+/* ── Source compare bar chart ────────────────────────────────────────────── */
+.src-compare { display:flex; gap:24px; justify-content:center; align-items:flex-end; height:110px; padding:0 20px; }
+.src-cmp-item { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; }
+.src-cmp-bar-wrap { flex:1; width:100%; display:flex; align-items:flex-end; justify-content:center; }
+.src-cmp-bar { width:36px; border-radius:var(--radius-sm) var(--radius-sm) 0 0; animation:growHeight 0.7s var(--ease-spring) both; min-height:4px; }
+@keyframes growHeight { from { height:0 !important } }
+.src-cmp-count { font-family:var(--font-display); font-size:14px; font-weight:800; color:var(--text-primary); }
+.src-cmp-label { font-size:10px; color:var(--text-muted); text-align:center; }
+
+/* ── Trends sentiment note ───────────────────────────────────────────────── */
+.trends-sentiment-note { font-size:11px; color:var(--text-muted); text-align:center; margin-top:8px; }
+.trends-sentiment-note strong { color:var(--text-secondary); }
+
+/* ── Updated trends grid (6 areas) ──────────────────────────────────────── */
+.trends-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "keywords  sentiment"
+    "keywords  radar"
+    "parties   mastodon"
+    "sources   sources";
+  gap: 14px;
+}
+@media(max-width:800px){
+  .trends-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "keywords""sentiment""radar""parties""mastodon""sources";
+  }
+}

@@ -1,0 +1,149 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg-base);
+}
+
+/* Left deco panel */
+.auth-deco {
+  position: relative;
+  width: 42%;
+  background: linear-gradient(160deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+  border-right: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+.auth-deco-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: .5;
+}
+
+.auth-deco-content {
+  position: relative; z-index: 1;
+  padding: 48px;
+  max-width: 400px;
+}
+
+.auth-deco-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 40px;
+}
+.auth-logo-icon {
+  width: 38px; height: 38px;
+  background: var(--accent); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.auth-deco-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;
+  color: var(--text-primary); margin-bottom: 14px;
+}
+.auth-deco-content p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; margin-bottom: 28px; }
+
+.auth-deco-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.auth-chip {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 12px; font-weight: 600;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+}
+
+/* Right form panel */
+.auth-form-panel {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 48px 32px;
+  position: relative;
+}
+
+.auth-back-btn {
+  position: absolute; top: 24px; left: 24px;
+  font-size: 13px;
+}
+
+.auth-form-inner {
+  width: 100%; max-width: 400px;
+}
+
+.auth-form-header {
+  margin-bottom: 28px;
+}
+.auth-form-header h1 {
+  font-family: var(--font-display); font-size: 1.75rem; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.auth-form-header p { color: var(--text-secondary); font-size: 0.95rem; }
+
+.auth-demo-btn {
+  width: 100%; padding: 11px 16px;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-mid);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all .18s;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 20px; font-family: var(--font-body);
+}
+.auth-demo-btn:hover { background: var(--bg-hover); color: var(--text-primary); border-color: var(--accent); }
+
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+
+.auth-field { display: flex; flex-direction: column; gap: 6px; }
+.auth-field label {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+}
+
+.auth-error {
+  padding: 10px 14px;
+  background: var(--red-dim); border: 1px solid rgba(248,113,113,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--red); font-size: 13px;
+}
+
+.auth-submit {
+  width: 100%; justify-content: center;
+  padding: 11px;  font-size: 14px;
+  margin-top: 4px;
+}
+
+.auth-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.auth-switch {
+  text-align: center; margin-top: 20px;
+  font-size: 13px; color: var(--text-secondary);
+}
+.auth-switch button {
+  background: none; border: none;
+  color: var(--accent); font-size: 13px;
+  font-weight: 600; cursor: pointer;
+  font-family: var(--font-body);
+  transition: opacity .18s;
+}
+.auth-switch button:hover { opacity: 0.8; }
+
+@media (max-width: 768px) {
+  .auth-deco { display: none; }
+  .auth-form-panel { padding: 32px 20px; }
+}
